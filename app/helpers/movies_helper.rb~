@@ -8,6 +8,6 @@ module MoviesHelper
     link_to title, {:sort => column}
   end
   def getThClass(column)
-    params[:sort] == column ? "hilite" : nil
+    params[:sort] == column ? "hilite" : "default"
   end
 end
