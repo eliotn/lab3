@@ -1,7 +1,8 @@
 REMEMBER git remote rm origin
 Do same rake commands on heroku server.
 
-Problem 1 part A: http://serene-coast-8726.herokuapp.com
+Problem 1 part A: 
+radiant-depths-2043.herokuapp.com/
 
 Source:
 http://railscasts.com/episodes/228-sortable-table-columns
@@ -9,4 +10,4 @@ http://railscasts.com/episodes/228-sortable-table-columns
 Connect dot of class in .css
 
 Problem 1 part B:
-
+http://serene-coast-8726.herokuapp.com
