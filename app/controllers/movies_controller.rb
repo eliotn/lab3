@@ -1,13 +1,16 @@
 class MoviesController < ApplicationController
+  #sort the movies
+  def index
+    @movies = Movie.order(params[:sort])
+    if params[:sort] == "title"
+	@movies.sort! {|x, y| x.title.downcase <=> y.title.downcase}
+    end
+  end
 
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
     # will render app/views/movies/show.<extension> by default
-  end
-
-  def index
-    @movies = Movie.all
   end
 
   def new
