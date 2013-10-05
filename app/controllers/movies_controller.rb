@@ -1,17 +1,9 @@
 class MoviesController < ApplicationController
-  
   def index
-    #setup the ratings
-    @all_ratings = ['G', 'PG', 'PG-13', 'R']
-    #setup the sort conditions from the clicked ratings
-    @movies = Movie
-    @all_ratings.each do |rating|
-	if params[:ratings][rating] != "1"
-		@movies = @movies.where("movies.rating != \'" + rating + "\'")
-	end
-    end
-    #sort the movies
-    @movies = @movies.order(params[:sort])
+    #setup all the ratings or the selected ratings
+    @all_ratings = Movie.all_ratings
+    
+    @movies = Movie.restrict_by_rating(params[:ratings])
     if params[:sort] == "title"
 	@movies.sort! {|x, y| x.title.downcase <=> y.title.downcase}
     end
