@@ -5,6 +5,7 @@ module MoviesHelper
   end
   # give the link_to
   def sort_column_link(column, title=nil)
+    session[:sort] = params[:sort]
     link_to title, {:sort => column, :ratings => params[:ratings]}
   end
   

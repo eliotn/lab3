@@ -9,6 +9,6 @@ class Movie < ActiveRecord::Base
     
     selected_ratings = selected_ratings.join(" OR ")
     
-    Movie.where(selected_ratings)
+    self.where(selected_ratings)
   end
 end

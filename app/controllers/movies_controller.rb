@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
     #setup all the ratings or the selected ratings
     @all_ratings = Movie.all_ratings
     
-    @movies = Movie.restrict_by_rating(params[:ratings])
+    @movies = Movie.order(params[:sort]).restrict_by_rating(params[:ratings])
     if params[:sort] == "title"
 	@movies.sort! {|x, y| x.title.downcase <=> y.title.downcase}
     end
