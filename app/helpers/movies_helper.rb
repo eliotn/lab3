@@ -1,11 +1,6 @@
 module MoviesHelper
-  # Checks if a number is odd:
-  def oddness(count)
-    count.odd? ?  "odd" :  "even"
-  end
   # give the link_to
   def sort_column_link(column, title=nil)
-    session[:sort] = params[:sort]
     link_to title, {:sort => column, :ratings => params[:ratings]}
   end
   
@@ -18,6 +13,7 @@ module MoviesHelper
   #third item is if the check box should be checked
   #by default everything is checked if there are no ratings
   def getCheckBoxStatus(rating)
+    
     checked = params[:ratings] == nil || params[:ratings][rating] != nil
     check_box_tag "ratings[#{rating}]" , 1, checked
   end
