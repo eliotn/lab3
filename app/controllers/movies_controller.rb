@@ -1,7 +1,10 @@
 class MoviesController < ApplicationController
+  def initialize
+    @all_ratings = Movie.all_ratings
+    super
+  end
   def index
     #setup all the ratings or the selected ratings
-    @all_ratings = Movie.all_ratings
     
     @movies = Movie.order(params[:sort]).restrict_by_rating(params[:ratings])
     if params[:sort] == "title"
