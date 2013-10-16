@@ -34,12 +34,13 @@ class MoviesController < ApplicationController
 	session[param] = params[param]
         
     end
-
+    #session.clear#change
     #redirect
     flash.keep
     flash[:redirect] = 1
-    
-    redirect_to session
+    params[:commit] = nil
+    params[:utf8] = nil
+    redirect_to params#redirect to the parameters
   end
 
   def show
