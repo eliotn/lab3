@@ -23,6 +23,15 @@ group :assets do
   gem 'uglifier'
 end
 
+group :test do
+  gem 'cucumber'
+  gem 'rspec-expectations'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'capybara', "~> 2.0.3" 
+end
+
+
 gem 'jquery-rails'
 
 # Use unicorn as the web server
